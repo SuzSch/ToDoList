@@ -14,6 +14,8 @@ namespace ToDoList
             WebApplication app = builder.Build();
 
             app.UseHttpsRedirection();
+            app.UseStaticFiles();
+            app.UseRouting();
 
             app.UseRouting();
 
