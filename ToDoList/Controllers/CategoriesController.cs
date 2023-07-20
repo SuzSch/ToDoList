@@ -18,6 +18,13 @@ namespace ToDoList.Controllers
         {
             return View();
         }
+        [HttpGet("/categories")]
+        public ActionResult Create(string categoryName)
+        {
+            Category newCategory = new Category(categoryName);
+            return RedirectToAction("Index");
+        }
+        // This one creates new Items within a given Category, not new Categories:
         [HttpPost("/categories/{categoryId}/items")]
         public ActionResult Create(int categoryId, string itemDescription)
         {
